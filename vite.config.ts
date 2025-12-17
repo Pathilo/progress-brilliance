@@ -5,16 +5,13 @@ import { componentTagger } from "lovable-tagger";
 
 import { defineConfig } from "vite";
 
-export default defineConfig({
-  base: "/progress-brilliance/",
-});
-
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
   },
+  base: "/progress-brilliance/",
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
