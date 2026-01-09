@@ -10,13 +10,17 @@ import NotFound from "./pages/NotFound";
 import OfferWindows from "./pages/OfferWindows";
 import OfferDoors from "./pages/OfferDoors";
 import OfferGarage from "./pages/OfferGarage";
-import OfferBlinds from "./pages/OfferBlinds";
-import OfferRollers from "./pages/OfferRollers";
+import OfferFacades from "./pages/OfferFacades";
+import OfferShutters from "./pages/OfferShutters";
 import Realizations from "./pages/Realizations";
 import Installation from "./pages/Installation";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
+import Investments from "./pages/Investments";
+import InvestmentsAluminum from "./pages/InvestmentsAluminum";
+import InvestmentsFiresafe from "./pages/InvestmentsFiresafe";
+import Downloads from "./pages/Downloads";
 
 const queryClient = new QueryClient();
 
@@ -36,11 +40,17 @@ const App = () => {
             <Route path="/oferta/okna" element={<OfferWindows />} />
             <Route path="/oferta/drzwi" element={<OfferDoors />} />
             <Route path="/oferta/bramy" element={<OfferGarage />} />
-            <Route path="/oferta/zaluzje" element={<OfferBlinds />} />
-            <Route path="/oferta/rolety" element={<OfferRollers />} />
+            <Route path="/oferta/fasady" element={<OfferFacades />} />
+            <Route path="/oferta/przeslony" element={<OfferShutters />} />
             <Route path="/realizacje" element={<Realizations />} />
             <Route path="/montaz" element={<Installation />} />
             <Route path="/o-nas" element={<About />} />
+            <Route path="/kontakt" element={<Contact />} />
+            <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
+            <Route path="/inwestycje" element={<Investments />} />
+            <Route path="/inwestycje/slusarka-aluminiowa" element={<InvestmentsAluminum />} />
+            <Route path="/inwestycje/przeciwpozarowe" element={<InvestmentsFiresafe />} />
+            <Route path="/do-pobrania" element={<Downloads />} />
             <Route path="/kontakt" element={<Contact />} />
             <Route path="/polityka-prywatnosci" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
