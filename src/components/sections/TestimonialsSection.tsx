@@ -31,12 +31,15 @@ export function TestimonialsSection() {
   const averageRating = testimonials.reduce((acc, t) => acc + t.rating, 0) / testimonials.length;
 
   return (
-    <section className="py-24 bg-background">
-      <div className="container">
+    <section className="py-24 bg-graphite relative overflow-hidden">
+      {/* Subtle accent line at top */}
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
+      
+      <div className="container relative">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
           <p className="text-primary font-semibold text-sm uppercase tracking-wider mb-3">Opinie klientów</p>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-graphite mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-background mb-4">
             Co mówią o nas klienci
           </h2>
           <div className="flex items-center justify-center gap-2 mt-6">
@@ -45,8 +48,8 @@ export function TestimonialsSection() {
                 <Star key={i} className="h-5 w-5 fill-primary text-primary" />
               ))}
             </div>
-            <span className="font-heading font-bold text-graphite">{averageRating.toFixed(1)}</span>
-            <span className="text-graphite-muted">/ 5.0</span>
+            <span className="font-heading font-bold text-background">{averageRating.toFixed(1)}</span>
+            <span className="text-background/60">/ 5.0</span>
           </div>
         </div>
 
@@ -55,10 +58,10 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial) => (
             <div 
               key={testimonial.id}
-              className="bg-card rounded-xl p-8 shadow-card border border-border relative"
+              className="bg-graphite-light/20 backdrop-blur-sm rounded-xl p-8 border border-background/10 relative hover:border-primary/30 transition-colors"
             >
               {/* Quote icon */}
-              <Quote className="absolute top-6 right-6 h-8 w-8 text-primary/10" />
+              <Quote className="absolute top-6 right-6 h-8 w-8 text-primary/20" />
               
               {/* Rating */}
               <div className="flex mb-4">
@@ -68,20 +71,23 @@ export function TestimonialsSection() {
               </div>
 
               {/* Text */}
-              <p className="text-graphite-light leading-relaxed mb-6">
+              <p className="text-background/80 leading-relaxed mb-6">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="border-t border-border pt-4">
-                <p className="font-heading font-semibold text-graphite">{testimonial.name}</p>
-                <p className="text-sm text-graphite-muted">{testimonial.location}</p>
+              <div className="border-t border-background/10 pt-4">
+                <p className="font-heading font-semibold text-background">{testimonial.name}</p>
+                <p className="text-sm text-background/60">{testimonial.location}</p>
                 <p className="text-xs text-primary mt-1">{testimonial.project}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
+      
+      {/* Subtle accent line at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
     </section>
   );
 }
