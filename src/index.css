@@ -173,6 +173,23 @@
     @apply h-px bg-gradient-to-r from-transparent via-border to-transparent;
   }
 
+  /* Dark accent strip - inspired by business card */
+  .dark-accent-strip {
+    @apply relative py-6 bg-graphite;
+  }
+  
+  .dark-accent-strip::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-px;
+    background: linear-gradient(90deg, transparent, hsl(var(--progress-blue) / 0.5), transparent);
+  }
+  
+  .dark-accent-strip::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-px;
+    background: linear-gradient(90deg, transparent, hsl(var(--progress-blue) / 0.5), transparent);
+  }
+
   /* Card hover effect */
   .card-hover {
     @apply transition-all duration-300;
